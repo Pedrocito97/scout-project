@@ -1,5 +1,8 @@
-@import './style/reset';
+@import './style/_reset';
+@import './style/_variables';
+@import './style/_mixins';
 
-.cla{
-    width: 100px;
+
+.head{
+    @include nav-head;
 }

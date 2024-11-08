@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
+*, ::after, ::before, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -15,6 +15,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
@@ -52,8 +53,99 @@ table {
   border-spacing: 0;
 }
 
-.cla {
-  width: 100px;
+burger, .head .menu-burger .burger-first {
+  height: 3px;
+  background: #FCB72B;
+  margin: 0.2rem 0;
+  width: 1.7rem;
+  transition: transform 0.3s ease-in-out, rotate 0.3s ease-in-out;
+}
+
+.head {
+  height: 4rem;
+  display: flex;
+  padding: 1.5rem;
+}
+.head .side-menu {
+  width: 100%;
+}
+.head .side-menu nav {
+  position: absolute;
+  color: #ca2222;
+  top: 55px;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.head .side-menu nav a {
+  display: block;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+  color: #2F3B59;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+.head .side-menu nav a:nth-child(4) {
+  background: #FCB72B;
+  color: #D9E8FF;
+  text-decoration: none;
+  padding: 0.8rem 3rem;
+  line-height: 1.5rem;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease-in-out;
+}
+.head .side-menu nav a:nth-child(4):hover {
+  border: 1px solid #FCB72B;
+  color: #FCB72B;
+  background: none;
+}
+.head .side-menu:active nav {
+  max-height: 500px; /* Ajuster selon la hauteur du menu */
+  opacity: 1;
+}
+.head .menu-burger {
+  height: 3px;
+  position: relative;
+}
+.head .menu-burger .burger-first {
+  transition: transform 0.3s ease-in-out, rotate 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform-origin: center;
+}
+.head .menu-burger .burger-middle {
+  position: relative;
+}
+.head .menu-burger .burger-middle::before, .head .menu-burger .burger-middle::after {
+  content: "";
+  position: absolute;
+  width: 1.7rem;
+  height: 3px;
+  background: #FCB72B;
+  transition: transform 0.3s ease-in-out;
+}
+.head .menu-burger .burger-middle::before {
+  top: -15px;
+}
+.head .menu-burger .burger-middle::after {
+  top: 5px;
+}
+.head .menu-burger:active .burger-middle::before {
+  transform: translateY(15px) rotate(45deg);
+}
+.head .menu-burger:active .burger-middle::after {
+  transform: translateY(-5px) rotate(-45deg);
+}
+.head .menu-burger:active .burger-first {
+  opacity: 0;
+}
+.head h1 {
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: "Space Mono", monospace;
+  height: 100%;
+  font-weight: bold;
+  color: rgba(47, 59, 89, 0.8);
 }
 
 /*# sourceMappingURL=output.css.map */
