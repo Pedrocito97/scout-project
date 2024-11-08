@@ -6,106 +6,12 @@
     line-height: 1.5rem;
     font-family: $font-primary;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     transition: background-color 0.3s ease-in-out;
     &:hover{
         border: 1px solid $color-button-yellow;
         color: $color-button-yellow;
         background: none;
-    }
-}
-burger{
-    height: 3px;
-    background: $color-button-yellow;
-    margin: 0.2rem 0;
-    width: 1.7rem;
-    transition: transform 0.3s ease-in-out, rotate 0.3s ease-in-out;
-}
-@mixin nav-head{
-    height: 4rem;
-    display: flex;
-    padding: 1.5rem;
-    .side-menu{
-        width: 100%;
-        
-        nav{
-          position: absolute;
-            color: #ca2222;
-            top: 55px;
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            a{
-                display: block;
-                padding: 1rem 2rem;
-                text-align: center;
-                font-family: $font-primary;
-                font-weight: bold;
-                color: $color-secondary-Navy;
-                text-decoration: none;
-                transition: background-color 0.3s ease-in-out;
-                &:nth-child(4){
-                    @include button;
-                }
-            }
-        }
-        &:active nav {
-            max-height: 500px; /* Ajuster selon la hauteur du menu */
-            opacity: 1;
-          }
-       
-    }
-    .menu-burger{
-        height: 3px;
-        position: relative;
-        .burger-first{
-            @extend burger;
-            transition: transform 0.3s ease-in-out, rotate 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            transform-origin: center;
-        }
-        
-        .burger-middle {
-            position: relative;
-            
-            // Pseudo-éléments before et after pour créer la croix
-            &::before,
-            &::after {
-                content: "";
-                position: absolute;
-                width: 1.7rem;
-                height: 3px;
-                background: $color-button-yellow;
-                transition: transform 0.3s ease-in-out;
-            }
-
-            // Positionnement initial de before et after
-            &::before {
-                top: -15px; // Ajustez si nécessaire pour l’alignement vertical
-            }
-
-            &::after {
-                top: 5px; // Ajustez si nécessaire pour l’alignement vertical
-            }
-        }
-
-        // Effet au survol ou au clic
-        &:active .burger-middle::before {
-            transform: translateY(15px) rotate(45deg);
-        }
-
-        &:active .burger-middle::after {
-            transform: translateY(-5px) rotate(-45deg);
-        }
-
-        &:active .burger-first {
-            opacity: 0; // Masquer la première ligne pour créer l'effet de croix
-        }
-    }
-    h1{
-        text-align: center;
-        font-size: 1.3rem;
-        font-family: $font-primary;
-        height: 100%;
-       
-        font-weight: bold;
-        color: rgba($color-secondary-Navy, 0.8);
     }
 }
