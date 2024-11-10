@@ -15,3 +15,109 @@
         background: none;
     }
 }
+
+@mixin svg-arrow{
+        position: relative;
+        display: inline-block;
+        &::after{
+        content: "";
+        position: absolute;
+        /* Positionne la flèche à la fin du chemin */
+        top: 90.6%; /* Ajuste la hauteur */
+        left: 82.5%; /* Ajuste la position horizontale à la fin du chemin */
+        transform: translate(50%,-49%) rotate(45deg); 
+      /* Ajustez selon la direction du chemin */
+        width: 50px;
+        height: 50px;
+        border-top: 13px solid #FCB72B;
+        border-right: 13px solid #FCB72B;
+        }
+}
+
+@mixin svg-icon{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: $color-button-yellow;
+    padding: 20px;
+    transition: background-color 0.3s ease-in-out;
+    &:hover{
+        background: $color-secondary-Navy;
+    }
+}
+
+@mixin img-bull{
+    width: 311px;
+    height: 311px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    &:hover{
+        background: $color-secondary-Navy;
+    }
+}
+
+@mixin footer{
+    position: relative;
+    background: $color-footer;
+    overflow: hidden;
+    &::before{
+        content: "";
+        position: absolute;
+        left: 200px;
+        bottom: -150px;
+        background: $color-quaternary-Grey;
+        width: 347px;
+        height: 347px;
+        border-radius: 50%;
+        opacity: 0.3;
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        right: 200px;
+        bottom: -150px;
+        border: 10px solid $color-quaternary-Grey;
+        width: 347px;
+        height: 347px;
+        border-radius: 50%;
+        opacity: 0.3;
+    }
+}
+
+@mixin foot-link{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: $color-mobile-nav;
+    gap: 20px;
+    height: 100%;
+    h3{
+        font-size: 1.9rem;
+        line-height: 1.5rem;
+        margin: 30px 50px 20px 50px;
+        color: $color-white;
+        font-family: $font-primary;
+        font-weight: bold;
+    }
+    a{
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+        margin: 10px 50px;
+        color: $color-white;
+        font-family: $font-primary;
+        font-weight: bold;
+        text-decoration: none;
+        opacity: 0.3;
+        transition: color 0.3s ease-in-out;
+        &:hover{
+            color: $color-button-yellow;
+        }
+    }
+    .social{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 50px;
+        padding: 20px;
+    }
+}

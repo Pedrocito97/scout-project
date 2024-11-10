@@ -26,3 +26,8 @@ function getBasePath() {
   }
   // Exemple d'utilisation
   loadHTML("header", "sections/navigation.html");
+  loadHTML("svg", "sections/fleche.html");
+  loadHTML("svg-human", "sections/fleche.html");
+  loadHTML("svg-city", "sections/fleche.html");
+  loadHTML("svg-wallet", "sections/fleche.html");
+  loadHTML("footer", "sections/piedPage.html");
