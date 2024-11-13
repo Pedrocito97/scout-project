@@ -1,6 +1,7 @@
-@import './style/_reset';
-@import './style/_variables';
-@import './style/_mixins';
+@import '_reset';
+@import '_variables';
+@import '_mixins';
+@import '_home';
 
 
 .nav {
@@ -45,12 +46,15 @@
         
     }
     .logo {
-        color: $color-secondary-Navy;
         text-align: center;
         flex-grow: 1;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         font-weight: bold;
         font-family: $font-primary;
+        a{
+            text-decoration: none;
+            color: $color-secondary-Navy;
+        }
     }
     .side-menu {
         position: fixed;
