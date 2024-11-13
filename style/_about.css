@@ -172,4 +172,59 @@ table {
   transform: translateY(50%) rotate(-45deg);
 }
 
-/*# sourceMappingURL=input.css.map */
+.banner {
+  height: 100px;
+  width: 100vw;
+  background-image: url("/assets/Bitmap (4).png");
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.banner h1 {
+  font-size: 2.5rem;
+  font-family: "Space Mono", monospace;
+  line-height: 2.5rem;
+  color: #D9E8FF;
+  text-align: center;
+}
+
+.mobility {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  flex-direction: column;
+  align-items: center;
+}
+.mobility svg-arrow-container {
+  position: relative;
+  display: inline-block;
+}
+.mobility svg-arrow-container::after {
+  content: "";
+  position: absolute;
+  /* Positionne la flèche à la fin du chemin */
+  top: 90.6%; /* Ajuste la hauteur */
+  left: 82.5%; /* Ajuste la position horizontale à la fin du chemin */
+  transform: translate(50%, -49%) rotate(45deg);
+  /* Ajustez selon la direction du chemin */
+  width: 50px;
+  height: 50px;
+  border-top: 13px solid #FCB72B;
+  border-right: 13px solid #FCB72B;
+}
+.mobility h2 {
+  font-size: 2.5rem;
+  font-family: "Space Mono", monospace;
+  line-height: 2.5rem;
+  color: #2F3B59;
+  text-align: center;
+}
+
+/*# sourceMappingURL=_about.css.map */
