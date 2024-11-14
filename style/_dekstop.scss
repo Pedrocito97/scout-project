@@ -1,0 +1,94 @@
+@media screen  and (min-width: 1024px) {
+    .banner-content{
+        position: relative !important;
+        .line{
+            position: absolute;
+            background: #FCB72B;
+            width: 202px;
+            height: 10px;
+            bottom: -150%;
+        }
+        .txt-content{
+            position: absolute;
+            height: auto;
+            width: 500px;
+            right: 40%;
+            
+            p{
+                text-align: start;
+                font-size: 1.5rem;
+                color: #000;
+                font-weight: bold;
+                font-family: $font-primary;
+                width: 400px;
+            }
+        }
+        .content-arrow{
+            svg{
+                right: 50px !important ;
+                top: 250px !important;
+            }
+        }
+        .bull-content{
+            position: absolute;
+            left: -60px;
+            top: 200px !important;
+            gap: 20px;
+           height: 60px !important;
+            .bull{
+                top: 550px !important;
+                height: 40px !important;
+                width: 40px !important;
+            }
+        }
+    }
+    .first-section-logo{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        position: relative;
+        width: 80%;
+        svg{
+            width: 80px;
+            height: 80px;
+        }
+        .location{
+            flex-direction: column;
+        }
+        .ride{
+            flex-direction: column;
+        }
+        .pick{
+            display: flex;
+            flex-direction: column;
+        }
+        &::after{
+            display: none;
+        }
+        &::before{
+            content: "" !important;
+            position: absolute !important;
+            bottom: -250px;
+            left: 380px;
+            width: 10px;
+            height: 1080px;
+            background: $color-quaternary-Grey;;
+            z-index: -1;
+            transform: rotate(90deg);
+        }
+    }
+    .second-section{
+        display: flex !important;
+        
+        .content-left{
+            .txt-telemetry{
+                flex-direction: row;
+            }
+            img{
+                width: 300px;
+                height: 300px;
+            }
+        }
+    }
+}

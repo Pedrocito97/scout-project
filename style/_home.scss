@@ -10,53 +10,49 @@
     background-size: cover;
     background-position: 93% center;
     overflow: hidden;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    flex-direction: column;
     position: relative;
-    h1{
-        font-size: 2.5rem;
-        font-family: $font-primary;
-        line-height: 2.5rem;
-        color: $color-white;
-        text-align: center;
-        margin-top: 50px;
-        margin-left: 25px ;
-        margin-right: 20px ;
-        margin-bottom: 20px;
-    }
+    
     .banner-content{
-        
+        position: relative;
         width: 100vw;
-        p{
-            font-size: 1.1rem;
-            font-family: $font-primary;
-            line-height: 1.1rem;
-            color: $color-white;
-            text-align: center;
-            margin-top: 20px;
-            margin-left: 25px ;
-            margin-right: 20px ;
-            margin-bottom: 20px;
+       
+        svg{
+            position: absolute;
+            right: 150px ;
+            bottom: -155px;
         }
         .txt-content{
             display: flex;
-            flex-direction: column;
+            flex-direction: column; 
             align-items: center; /* Centre horizontalement le contenu de txt-content */
-        text-align: center;
-        gap: 1rem;
+            justify-content: center; /* Centre verticalement le contenu de txt-content */
+            margin: 30px 15px 10px 15px;
+            padding-top: 50px ;
             a{
                 @include button;
             }
+
+            h1{
+                font-size: 2rem;
+                font-family: $font-primary;
+                line-height: 2.5rem;
+                color: #fff;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            p{
+                font-size: 1.1rem;
+                font-family: $font-primary;
+                line-height: 1.1rem;
+                color: $color-white;
+                text-align: center;
+                margin: 20px;
+                font-weight: 400;
+            }
         }
+
         
-        .svg-arrow-container{
-            
-            @include svg-arrow;
-            right: 320px ;
-            bottom: 20px;
-        }
     }
 }
 .first-section-logo{
@@ -102,7 +98,6 @@
         line-height: 2rem;
         color: $color-secondary-Navy;
         font-weight: bold;
-        margin: 10px auto;
         letter-spacing: -1.43px;
     }
     p{
@@ -115,60 +110,70 @@
     }
     a{
         @include button;
-        margin: 20px;
+       // margin: 20px;
     }
     img{
         @include img-bull;
-        margin-top: 50px;
+       /// margin-top: 40px;
     }
     .content-left{
         display: flex;
         flex-direction: column;
-        overflow: hidden;
+        overflow-x: hidden;
+        gap: 2rem;
         .txt-telemetry{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
            position: relative;
-           .svg-arrow-container{
+           svg{
             position: absolute;
-            @include svg-arrow;
-            top: 50%;
-            bottom: 120px;
-            left: 50%;
-            transform: translate(-30%, -10%) rotateY(-180deg);
+            left: 10px;
+            top: 200px;
+
            }
         }
         .city-near{
             position: relative;
-            .svg-arrow-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            svg{
                 position: absolute;
-                @include svg-arrow;
-                top: 100%;
-                bottom: 300px;
-                left: 0;
-                transform: translate(-50%, -20%);
+                
+                right: 80px;
+                top: 20px;
+                transform: rotateY(180deg);
             }
         }
         .txt-pay{
             position: relative;
-            .svg-arrow-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            svg{
                 position: absolute;
-                @include svg-arrow;
-                top: 50%;
-                bottom: 320px;
-                left: 80%;
-                transform: translate(-30%, -10%) rotateY(-180deg);
+                left: 110px;
+                top: 20px;
             }
         }
     }
 }
 
 .footer-section{
-    margin-top: 80px;
     color: $color-quaternary-Grey;
     font-family: $font-primary;
     text-align: center; 
     .foot-sign{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
         @include footer;
-        height: 300px;
         h3{
             font-size: 2rem;
             line-height: 2rem;
@@ -185,5 +190,12 @@
     }
     .foot-link{
         @include foot-link;
+        li{
+            list-style: none;
+            margin: 20px;
+            a{
+                @include link-animation
+            }
+        }
     }
 }
