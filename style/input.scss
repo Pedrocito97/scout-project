@@ -1,17 +1,37 @@
-@import './style/_reset';
-@import './style/_variables';
-@import './style/_mixins';
+@import '_reset';
+@import '_variables';
+@import '_mixins';
+@import '_home';
+@import '_mediaNav';
+@import '_dekstop';
+@import '_career';
 
 
 .nav {
+    position: fixed;
     color: $color-secondary-Navy;
     display: flex;
     color: $color-secondary-Navy;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    height: 4rem;
+    z-index: 1000;
+    height: 6rem;
     padding: 0 2rem;
+    .logo {
+        text-align: center;
+        color: #000;  
+        height: 1.9rem;
+        flex-grow: 1;
+        font-size: 1.3rem;
+        font-weight: bold;
+        font-family: $font-primary;
+        a{
+            text-decoration: none;
+            color: $color-secondary-Navy;
+            font-size: 2.3rem;
+        }
+    }
     .menu-burger{
         position: relative;
         width: 1.5rem;
@@ -44,51 +64,53 @@
         }
         
     }
-    .logo {
-        color: $color-secondary-Navy;
-        text-align: center;
-        flex-grow: 1;
-        font-size: 1.2rem;
-        font-weight: bold;
-        font-family: $font-primary;
-    }
-    .side-menu {
-        position: fixed;
-        top: 60px;
+
+    .content{
         left: 0;
-        width: 16rem;
+        top: 60px;
         height: 0;
-        background-color: $color-mobile-nav;
-        transform: translateX(-100%);
         transition: transform 0.5s ease-in-out, opacity 5s ease-in-out, height 0.5s ease-in-out;
+        position: fixed;
+            
+        width: 16rem;
+        background-color: $color-mobile-nav;
+       
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 20px;
-        nav {
-            display: flex;
-            flex-direction: column;
-            height: 100%;   
-            .btn{
-                margin-top: auto;
-                @include button;
+        transform: translateX(-100%);
+        .side-menu {
+           
+            nav {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                height: 100%;   
+                a {
+                color: $color-quaternary-Grey;
+                text-decoration: none;
+                font-family: $font-primary;
+                padding: 15px;
+                display: flex;
+                font-size: 18px;
+                transition: background-color 0.3s ease;
+                @include link-animation;
+             }
             }
-            a {
-            color: $color-quaternary-Grey;
-            text-decoration: none;
-            font-family: $font-primary;
-            padding: 15px;
-            display: flex;
-            font-size: 18px;
-            transition: background-color 0.3s ease;
-         }
-        }
 
+           
+    
+        }
+        .btn{
+            margin-top: 50%;
+            @include button;
+        }
     }
     .menu-toggle {
         display: none;/* Cache le checkbox */
 
-        &:checked ~ .side-menu {
+        &:checked ~ .content {
             transform: translateX(0);
             opacity: 1;
             height: 91.5%;

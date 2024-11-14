@@ -2,16 +2,128 @@
     background: $color-button-yellow;
     color: $color-white;
     text-decoration: none;
-    padding: 0.8rem 3rem; 
-    line-height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: $font-primary;
     font-weight: bold;
-    font-size: 1rem;
+    height: 4rem;
+    text-align: center;
+    width: 11rem;
+    font-size: 0.9rem;
     line-height: 1.5rem;
     transition: background-color 0.3s ease-in-out;
     &:hover{
         border: 1px solid $color-button-yellow;
         color: $color-button-yellow;
         background: none;
+    }
+}
+
+
+@mixin svg-icon{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: $color-button-yellow;
+    padding: 20px;
+    transition: background-color 0.3s ease-in-out;
+    &:hover{
+        background: $color-secondary-Navy;
+    }
+}
+
+@mixin img-bull{
+    width: 311px;
+    height: 311px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    &:hover{
+        background: $color-secondary-Navy;
+    }
+}
+
+@mixin footer{
+    position: relative;
+    background: $color-footer;
+    height: 320px;
+    overflow: hidden;
+    &::before{
+        content: "";
+        position: absolute;
+        left: 180px;
+        bottom: -110px;
+        background: $color-quaternary-Grey;
+        width: 247px;
+        height: 247px;
+        border-radius: 50%;
+        opacity: 0.1;
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        right: 180px;
+        bottom: -110px;
+        border: 10px solid $color-quaternary-Grey;
+        width: 247px;
+        height: 247px;
+        border-radius: 50%;
+        opacity: 0.1;
+    }
+}
+
+@mixin foot-link{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: $color-mobile-nav;
+    gap: 20px;
+    height: auto;
+    h3{
+        font-size: 1.9rem;
+        line-height: 1.5rem;
+        margin: 30px 50px 20px 50px;
+        color: $color-white;
+        font-family: $font-primary;
+        font-weight: bold;
+    }
+    a{
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+        margin: 10px 50px;
+        color: $color-white;
+        font-family: $font-primary;
+        font-weight: bold;
+        text-decoration: none;
+        opacity: 0.3;
+        transition: color 0.3s ease-in-out;
+        &:hover{
+            color: $color-button-yellow;
+        }
+    }
+    .social{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 50px;
+        padding: 20px;
+    }
+}
+
+@mixin link-animation{
+    transition: color 0.3s ease-in-out;
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: -2px; // ajuste la position de la ligne
+        left: 0;
+        width: 0;
+        height: 2px;   
+        background-color: $color-button-yellow;
+        transition: all 0.3s ease-in-out 0s;
+    }
+    &:hover::after{
+       width: 100%;
     }
 }
